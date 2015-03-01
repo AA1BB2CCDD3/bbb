@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.2.0" method="upgrade">
+
+	<name>Event MG 2015</name>
+	<creationDate>2015-01-01</creationDate>
+	<author>Mindaugas Gedvilas</author>
+	<authorEmail>gedvilas.mindaugas@gmail.com</authorEmail>
+	<authorUrl>http://www.su.lt</authorUrl>
+	<copyright>All rights reserved by MG 2015.</copyright>
+	<license>GPL 2.0</license>
+	<version>1.0.0</version>
+	<description>Iš pasirinktos kategorijos ir datos atvaizduoja įvykius.</description>
+
+	<update> <!-- Runs on update; New since J2.5 -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+
+	<!-- Site Main File Copy Section -->
+	<!-- Note the folder attribute: This attribute describes the folder
+		to copy FROM in the package to install therefore files copied
+		in this section are copied from /site/ in the package -->
+	<files folder="site">
+		<filename>index.html</filename>
+		<filename>eventmg2015.php</filename>
+		<filename>controller.php</filename>
+		<folder>views</folder>
+		<folder>models</folder>
+	</files>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu link='index.php?option=eventmg2015'>Event MG 2015</menu>
+		<!-- Administration Main File Copy Section -->
+		<!-- Note the folder attribute: This attribute describes the folder
+			to copy FROM in the package to install therefore files copied
+			in this section are copied from /admin/ in the package -->
+		<files folder="admin">
+			<!-- Admin Main File Copy Section -->
+			<filename>index.html</filename>
+			<filename>eventmg2015.php</filename>
+			<!-- SQL files section -->
+			<folder>sql</folder>
+		</files>
+	</administration>
+
+</extension>
