@@ -172,112 +172,86 @@ $doc->addScript('/new.su.lt/templates/' . $this->template . '/js/util.js', 'text
         </div>
     </div>
 
-
-
 	<script>
 	jQuery(function() {
 		
 <?php	
-		//todo: perkelti i moduli!
+	//todo: perkelti i moduli!
 
-		$jinput = JFactory::getApplication()->input;
-		$id     = $jinput->get('id', 1, 'INT');		
-		
-		$db = &JFactory::getDBO();
-
-		$query = '
-		SELECT 
-			day(a.created) AS day,
-			year( a.created) AS year,
-			month( a.created ) AS month,
-			a.id, date( a.created ) AS data,
-			time(a.created) AS time,
-			a.title AS title
-		FROM `#__content` as a WHERE state=1 and catid="'.$id.'" ';
-		
-		$db->setQuery($query);
-        $items = ($items = $db->loadObjectList())?$items:array();
-		
-		//print_r(array_values($items));
-
-		$datesArray = '';
-		$hrefs = '';
-		
-for($i=0; $i<sizeof($items); $i++)
-{
+	$jinput = JFactory::getApplication()->input;
+	$id     = $jinput->get('id', 1, 'INT');		
 	
-	//[day] => 5 [year] => 2015 [month] => 2 
-		
-	if($datesArray != '')
-		$datesArray .= ',';
+	$db = &JFactory::getDBO();
 
-	$datesArray .=  "'".$items[$i]->month.'/'.$items[$i]->day.'/'.$items[$i]->year."'";        //['11/12/2014','11/21/2014', '2/22/2015'];
+	$query = '
+	SELECT 
+		day(a.created) AS day,
+		year( a.created) AS year,
+		month( a.created ) AS month,
+		a.id, date( a.created ) AS data,
+		time(a.created) AS time,
+		a.title AS title
+	FROM `#__content` as a WHERE state=1 and catid="'.$id.'" ';
 	
-	if($hrefs != '')
-		$hrefs .= ',';
-	
-	$hrefs  .=  "'index.php?option=com_helloworld&view=helloworld&id=939&Itemid=2807&datemg=".$items[$i]->year."-".$items[$i]->month."-".$items[$i]->day."'";
-}	
+	$db->setQuery($query);
+	$items = ($items = $db->loadObjectList())?$items:array();	
+
+	$datesArray = '';
+	$hrefs = '';
+		
+	for($i=0; $i<sizeof($items); $i++)
+	{		
+		if($datesArray != '')
+			$datesArray .= ',';
+
+		$datesArray .=  "'".$items[$i]->month.'/'.$items[$i]->day.'/'.$items[$i]->year."'"; //['11/12/2014','11/21/2014', '2/22/2015'];
+		
+		if($hrefs != '')
+			$hrefs .= ',';
+		
+		$hrefs  .=  "'index.php?option=com_eventmg2015&view=eventmg2015&id=939&Itemid=2807&datemg=".$items[$i]->year."-".$items[$i]->month."-".$items[$i]->day."'";
+	}	
 	
 	echo "var datesArray=[".$datesArray."];";
-	echo "var hrefs = [".$hrefs."]";
-	
-?>		
-		
-
-	//var datesArray=['11/12/2014','11/21/2014', '2/22/2015'];
-	//var hrefs = ['http://www.bbc.com/', 'http://www.cnn.com/', 'http://www.cnn.com/'];
-	
-    jQuery( "#datepicker" ).datepicker({
-		nextText: ' ',
-		prevText: ' ',
-		monthNames: ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Gegužė', 'Birželis', 'Liepa', 'Rugpjūtis', 'Rugsėjis', 'Spalis','Lapkritis', 'Gruodis'],
-		dayNamesMin: ['Pir', 'Ant' , 'Tre', 'Ket', 'Pen', 'Šeš', 'Sek'],
-		showOtherMonths: true,
-					 beforeShowDay: function (date) {
-				var theday = (date.getMonth()+1) +'/'+ 
-							date.getDate()+ '/' + 
-							date.getFullYear();
-					return [true,jQuery.inArray(theday, datesArray) >=0?"calendar-higliht":''];
-				},
-    onSelect: function(dateText, inst) {        
-        //var date = new Date(dateText.slice(4));
-		var date = new Date(dateText);
-            m = date.getMonth();
-            d = date.getDate();
-            y = date.getFullYear();        
-        //if (jQuery.inArray(y + '-' + (m + 1) + '-' + d, datesArray) != -1) {
-			//alert(jQuery.inArray(dateText, datesArray));
-			
-			//alert(dateText);
-			//alert((m + 1) + '/' +  d + '/' + y);
-			
-			//var date = $(this).datepicker('getDate');
-			
-		if (jQuery.inArray((m + 1) + '/' +  d + '/' + y, datesArray) != -1) {
-            window.location = hrefs[datesArray.indexOf((m + 1) + '/' +  d + '/' + y)];
-        }
-    }				
-		
-	
-	});
-	
-  });	
+	echo "var hrefs = [".$hrefs."]";	
+?>			
+		jQuery( "#datepicker" ).datepicker({
+			nextText: ' ',
+			prevText: ' ',
+			monthNames: ['Sausis', 'Vasaris', 'Kovas', 'Balandis', 'Gegužė', 'Birželis', 'Liepa', 'Rugpjūtis', 'Rugsėjis', 'Spalis','Lapkritis', 'Gruodis'],
+			dayNamesMin: ['Pir', 'Ant' , 'Tre', 'Ket', 'Pen', 'Šeš', 'Sek'],
+			showOtherMonths: true,
+						 beforeShowDay: function (date) {
+					var theday = (date.getMonth()+1) +'/'+ 
+								date.getDate()+ '/' + 
+								date.getFullYear();
+						return [true,jQuery.inArray(theday, datesArray) >=0?"calendar-higliht":''];
+					},
+			onSelect: function(dateText, inst) {
+				var date = new Date(dateText);
+					m = date.getMonth();
+					d = date.getDate();
+					y = date.getFullYear();
+					
+				if (jQuery.inArray((m + 1) + '/' +  d + '/' + y, datesArray) != -1) {
+					window.location = hrefs[datesArray.indexOf((m + 1) + '/' +  d + '/' + y)];
+				}
+			}
+		});	
+	});	
 	
 	jQuery('.faq h2').click(function(){
 		if(jQuery(this).next().css('display') == 'none')
 		{
-			jQuery(this).next().slideDown();
-			
+			jQuery(this).next().slideDown();			
 			jQuery(this).addClass('active');
 		}
 		else
 		{
 			jQuery(this).next().slideUp();
 			jQuery(this).removeClass('active');
-		}
-		
+		}		
 	});
-</script>	
+	</script>	
 </body>
 </html>
