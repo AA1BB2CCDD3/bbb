@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3" type="template">
+	<name>mg_su_2015a</name>
+	<creationDate>2015-01-01</creationDate>
+	<author>Mindaugas Gedvilas</author>
+	<authorEmail>gedvilas.mindaugas@gmail.com</authorEmail>
+	<authorUrl>http://www.su.lt</authorUrl>
+	<copyright>MG 2015</copyright>
+	<license>GNU/GPL</license>
+	<version>1.0.0</version>
+	<description>Šiaulių Universiteto puslapis (a)</description>
+	<files>
+		<filename>index.php</filename>
+		<filename>templateDetails.xml</filename>
+		<folder>images</folder>
+		<folder>css</folder>
+		<folder>html</folder>
+		<folder>fonts</folder>
+		<folder>js</folder>
+	</files>
+	<positions>
+		<position>debug</position>
+		<position>breadcrumb</position>
+		<position>left</position>
+		<position>right</position>
+		<position>top</position>
+		<position>user1</position>
+		<position>user2</position>
+		<position>user3</position>
+		<position>user4</position>
+		<position>footer</position>		
+		<position>position-0</position>
+		<position>position-1</position>
+		<position>position-2</position>
+		<position>position-3</position>
+		<position>position-4</position>
+		<position>position-5</position>
+		<position>position-6</position>
+		<position>position-7</position>
+		<position>position-8</position>
+		<position>position-9</position>
+		<position>position-10</position>
+		<position>position-11</position>
+		<position>position-12</position>
+		<position>position-13</position>
+		<position>position-14</position>
+		<position>position-15</position>		
+	</positions>
+</extension>
