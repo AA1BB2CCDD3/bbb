@@ -1621,3 +1621,11 @@ border-bottom-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 /* new - */
+
+.logo{
+	border: 0px;
+}
+
+.news-item  img{
+	border: 0px;
+}

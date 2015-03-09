@@ -51,7 +51,7 @@ $info    = $params->get('info_block_position', 0);
 <?php // new - -----------------------------------------------------------------------------------------------------------?>
 					<!-- <a href = "<?php $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); echo $link ?>" ><div class="image"><img alt="" src="<?php  echo $this->baseurl; ?>/templates/<?php $app = & JFactory::getApplication(); $temp1 = $app->getTemplate(); echo $temp1;?>/images/new.jpg"></div></a>
 		-->
-<a class="news-item" href="#">
+<a class="news-item" href="<?php $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); echo $link ?>">
 	<div class="image">
 		<img alt="" src="<?php  echo $this->baseurl; ?>/templates/<?php $app = & JFactory::getApplication(); $temp1 = $app->getTemplate(); echo $temp1;?>/images/new.jpg">
 	</div>
@@ -70,7 +70,7 @@ $info    = $params->get('info_block_position', 0);
 <?php else : ?>
 <?php //echo $this->item->event->beforeDisplayContent; ?> <?php //echo $this->item->introtext; ?>
 
-<a class="news-item no-image" href="#">
+<a class="news-item no-image" href="<?php $link = JRoute::_(ContentHelperRoute::getArticleRoute($this->item->slug, $this->item->catid)); echo $link ?>">
 	<div class="text">
 		<div class="date">
 			<span><?php echo JHtml::_('date', $this->item->created, 'Y');?></span>

@@ -6,12 +6,14 @@ $doc = JFactory::getDocument();
 $doc->addStyleSheet('templates/' . $this->template . '/css/css.css');
 $doc->addStyleSheet('templates/' . $this->template . '/css/style.css');
 
+/*
 $doc->addScript('/templates/' . $this->template . '/js/bootstrap.js', 'text/javascript');
 $doc->addScript('/templates/' . $this->template . '/js/common.js', 'text/javascript');
 $doc->addScript('/templates/' . $this->template . '/js/jquery.js', 'text/javascript');
 $doc->addScript('/templates/' . $this->template . '/js/main.js', 'text/javascript');
 $doc->addScript('/templates/' . $this->template . '/js/stats.js', 'text/javascript');
 $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascript');
+*/
 ?>
 
 <!DOCTYPE html>
@@ -19,14 +21,13 @@ $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascrip
 <head>
     <jdoc:include type="head" />
 	
-	
-  <script src="/new.su.lt/media/system/js/mootools-core.js" type="text/javascript"></script>
-  <script src="/new.su.lt/media/jui/js/jquery.min.js" type="text/javascript"></script>
-  <script src="/new.su.lt/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
-  <script src="/new.su.lt/media/jui/js/jquery-migrate.min.js" type="text/javascript"></script>
-  <script src="/new.su.lt/media/system/js/core.js" type="text/javascript"></script>
-  <script src="/new.su.lt/media/system/js/mootools-more.js" type="text/javascript"></script>
-  <script src="/new.su.lt/media/system/js/modal.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/system/js/mootools-core.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/jui/js/jquery.min.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/jui/js/jquery-noconflict.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/jui/js/jquery-migrate.min.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/system/js/core.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/system/js/mootools-more.js" type="text/javascript"></script>
+	<script src="/new.su.lt/media/system/js/modal.js" type="text/javascript"></script>
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	
@@ -65,14 +66,17 @@ $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascrip
         <!-- header -->
 		<div class="header">
 			<div class="header-wrapper">
+			
+				<a href ="index.php">
 				<img alt="" class="logo" src="<?php echo $this->baseurl; ?>/templates/<?php echo $this->template; ?>/images/logo.png">
+				</a>
 								
 				<div class="header-menus">
 					<ul class="top-menu">
 						<li>LT</li>
 					</ul>
 					<ul class="top-menu-icons">
-						<li class="home"><a></a></li>
+						<li class="home" onclick="window.open('index.php', '_self')" style="cursor:pointer"><a></a></li>
 						<li class="simple"><a></a></li>
 						<li class="sitemap"><a></a></li>
 					</ul>
@@ -99,21 +103,16 @@ $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascrip
             <div class='span9 content' >
 					
 				<div class="content-wrapper">
-					<div class="article">	
-					
-					<div class="aside">
+					<div class="article">						
+						<div class="aside">
 							<jdoc:include type="modules" name="position-3" style="xhtml" />
 							<jdoc:include type="modules" name="position-7" style="well" />
 							<jdoc:include type="message" />
-					</div>
-								
-					<div class="article-content content-simple">
+						</div>									
+						<div class="article-content content-simple">
 							<jdoc:include type="component" />
-					</div>
-																
-
-					<jdoc:include type="modules" name="position-2" style="none" />
-					
+						</div>																	
+						<jdoc:include type="modules" name="position-2" style="none" />					
 					</div>
 				</div>	
 
@@ -121,8 +120,7 @@ $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascrip
 					<h3>užsiprenumeruokite naujienlaiškį</h3>
 					<p> Sužinokite naujienas patys pirmieji</p>
 					<div class="newsletter-form">
-						<input placeholder="Vardas" type="text"/> <input placeholder="El. pa6tas" type="text"/> <input value="siųsti" type="submit"/>
-					
+						<input placeholder="Vardas" type="text"/> <input placeholder="El. pa6tas" type="text"/> <input value="siųsti" type="submit"/>					
 					</div>
 				</div>	
 	
@@ -130,27 +128,23 @@ $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascrip
 					<div class="footer-wrapper">		
 						<div class="footer-menu">
 							<h3>Stojantiesiams</h3>
-								<jdoc:include type="modules" name="position-9" style="none" />	
-						</div>
-						
+							<jdoc:include type="modules" name="position-9" style="none" />	
+						</div>						
 						<div class="footer-menu">			
 							<h3>Studentams</h3>
 							<jdoc:include type="modules" name="position-10" style="none" />	
-						</div>
-													
+						</div>													
 						<div class="footer-menu">
 							<h3>Mokslas ir menas</h3>				
 							<jdoc:include type="modules" name="position-11" style="none" />	
-						</div>
-						
+						</div>						
 						<div class="footer-menu">
 							<h3>Fakultetai ir institutai</h3>
 							<jdoc:include type="modules" name="position-12" style="none" />	
 						</div>
 						<div class="custom-footer-menu">					
 							<jdoc:include type="modules" name="position-13" style="none" />			
-						</div>
-						
+						</div>						
 					</div>
 					
 					<div class="footer-bottom">
@@ -159,7 +153,7 @@ $doc->addScript('/templates/' . $this->template . '/js/util.js', 'text/javascrip
 								© 2014  Šiaulių universitetas.   Įmonės kodas 111951345;   PVM mokėtojo kodas LT 119513417; <br>   
 								Vilniaus g. 88, 76285 Šiauliai;    tel. nr. (8 41) 595 800;   faks. (8 41) 595 809;   el. p. all@cr.su.lt;   Svetainės administratorius 
 							</p>
-							<p class="solution"> Sprendimas:  Šiaulių universitetas</p>
+							<p class="solution"> Sprendimas: VYSTYMAS</p>
 						</div>
 					</div>
 				</div>				
