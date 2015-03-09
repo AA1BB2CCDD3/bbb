@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_EVENTMG2015_EVENTMG2015_VIEW_DEFAULT_TITLE">
+		<message>COM_EVENTMG2015_EVENTMG2015_VIEW_DEFAULT_DESC</message>
+	</layout>
+	<fields name="request">
+		<fieldset name="request">
+			<field
+					name="id"
+					type="text"
+					label="COM_EVENTMG2015_EVENTMG2015_FIELD_CATEGORY_LABEL"
+					description="COM_EVENTMG2015_EVENTMG2015_FIELD_CATEGORY_DESC"
+					default="1"/>
+		</fieldset>
+	</fields>
+</metadata>

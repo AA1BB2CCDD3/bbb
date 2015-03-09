@@ -1,0 +1,60 @@
+<NotepadPlus>
+    <Project name="mg_su_2015a">
+        <File name="C:\xampp\htdocs\joomla3\new.su.lt\templates\mg_su_2015a\index.php" />
+        <Folder name="css">
+            <File name="C:\xampp\htdocs\joomla3\new.su.lt\templates\mg_su_2015a\css\style.css" />
+        </Folder>
+    </Project>
+    <Project name="mg_su_2015b">
+        <File name="C:\xampp\htdocs\joomla3\new.su.lt\templates\mg_su_2015b\index.php" />
+        <Folder name="css">
+            <File name="C:\xampp\htdocs\joomla3\new.su.lt\templates\mg_su_2015b\css\style.css" />
+        </Folder>
+    </Project>
+    <Project name="mg_su_2015c">
+        <File name="C:\xampp\htdocs\joomla3\new.su.lt\templates\mg_su_2015c\index.php" />
+        <Folder name="css">
+            <File name="C:\xampp\htdocs\joomla3\new.su.lt\templates\mg_su_2015c\css\style.css" />
+        </Folder>
+    </Project>
+    <Project name="Components">
+        <Folder name="com_eventmg2015">
+            <Folder name="admin">
+                <Folder name="sql">
+                    <Folder name="updates">
+                        <Folder name="mysql">
+                            <File name="com_eventmg2015\admin\sql\updates\mysql\0.0.1.sql" />
+                            <File name="com_eventmg2015\admin\sql\updates\mysql\index.html" />
+                        </Folder>
+                        <File name="com_eventmg2015\admin\sql\updates\index.html" />
+                    </Folder>
+                    <File name="com_eventmg2015\admin\sql\index.html" />
+                </Folder>
+                <File name="com_eventmg2015\admin\eventmg2015.php" />
+                <File name="com_eventmg2015\admin\index.html" />
+            </Folder>
+            <Folder name="site">
+                <Folder name="models">
+                    <File name="com_eventmg2015\site\models\eventmg2015.php" />
+                    <File name="com_eventmg2015\site\models\index.html" />
+                </Folder>
+                <Folder name="views">
+                    <Folder name="eventmg2015">
+                        <Folder name="tmpl">
+                            <File name="com_eventmg2015\site\views\eventmg2015\tmpl\default.php" />
+                            <File name="com_eventmg2015\site\views\eventmg2015\tmpl\default.xml" />
+                            <File name="com_eventmg2015\site\views\eventmg2015\tmpl\index.html" />
+                        </Folder>
+                        <File name="com_eventmg2015\site\views\eventmg2015\index.html" />
+                        <File name="com_eventmg2015\site\views\eventmg2015\view.html.php" />
+                    </Folder>
+                    <File name="com_eventmg2015\site\views\index.html" />
+                </Folder>
+                <File name="com_eventmg2015\site\controller.php" />
+                <File name="com_eventmg2015\site\eventmg2015.php" />
+                <File name="com_eventmg2015\site\index.html" />
+            </Folder>
+            <File name="com_eventmg2015\eventmg2015.xml" />
+        </Folder>
+    </Project>
+</NotepadPlus>
