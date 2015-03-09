@@ -1624,3 +1624,7 @@ border-bottom-left-radius: 5px;
 	margin-bottom: 40px;
 }
 /* new - */
+
+.logo{
+	border: 0px;
+}
